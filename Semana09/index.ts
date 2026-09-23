@@ -1,8 +1,8 @@
 const server = Bun.serve({
 	port: 3000,
 	routes: {
-		"/": () => new Response("Blog no ar!\n"),
-		"/api/status": () => new Response.json({
+		"/": () => new Response("Seja muito bem vindo ao blog!\n"),
+		"/api/status": () => Response.json({
 			ok: true,
 			runtime: "bun",
 			hora: new Date().toISOString(),
