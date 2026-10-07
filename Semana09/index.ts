@@ -7,6 +7,10 @@ const server = Bun.serve({
 			runtime: "bun",
 			hora: new Date().toISOString(),
 		}),
+		"/api/sobre": () => Response.json({
+			nome: "Caique",
+			frase: "Jamais ser derrotado!",
+		}),
 	},
 });
 console.log(`Ouvindo em ${server.url}`);
