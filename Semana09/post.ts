@@ -1,18 +1,19 @@
-interface Post {
-	title: String,
-	subtitle: String,
-	id: String,
-	author: String,
-	criadoEm: Date;		
-	text: String,
+import type { Post } from "./types";
+const posts: Post[] = [];
+
+export function criarPost(titulo: String, conteudo: String): Post {
+	const novo = {
+		id: posts.length + 1, titulo, conteudo,
+		criadoEm: new Date().toISOString()
+	};
+	posts.push(novo);
+	return novo;
 };
 
-export function criarPost(title: String, text: String) {
-	let post = {
-		titulo: title,
-		texto: text,
-		id: 1,
-		criadoEm: new Date(),
-	};
-	return post;
+export function getPosts(): Post[] {
+	return posts;
+}
+
+export function getById(id: number): Post | undefined {
+	return posts.find((p) => p.id === id);
 };

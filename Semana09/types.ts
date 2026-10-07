@@ -1,5 +1,5 @@
 export type Post = {
-	id: String;
+	id: Number;
 	titulo: String;
 	conteudo: String;
 	criadoEm: String;
